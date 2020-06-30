@@ -29,5 +29,5 @@ _dl_matrix:
   'armv6l': "grafana-kiosk.linux.armv6"
   'armv5l': "grafana-kiosk.linux.armv5"
 
-playbook_version_number: 7 # should be an integer
+playbook_version_number: 8 # should be an integer
 playbook_version_path: 'role-grafana-kiosk_roles-ansible_github.com.version' # unique string

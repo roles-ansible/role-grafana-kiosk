@@ -1,13 +1,13 @@
 general:
   kiosk-mode: {{ grafana_kiosk.general.kiosk_mode }}
-  autofit: {{ grafana_kiosk.general.autofit }}
-  lxde: {{ grafana_kiosk.general.lxde }}
+  autofit: {{ grafana_kiosk.general.autofit | ternary("true", "false")  }}
+  lxde: {{ grafana_kiosk.general.lxde | ternary("true", "false")  }}
   lxde-home: {{ grafana_kiosk.general.lxde_home }}
 
 target:
   login-method: {{ grafana_kiosk.target.login_method }}
   username: {{ grafana_kiosk.target.username }}
   password: {{ grafana_kiosk.target.password }}
-  playlist: {{ grafana_kiosk.target.playlist }}
+  playlist: {{ grafana_kiosk.target.playlist | ternary("true", "false") }}
   URL: {{ grafana_kiosk.target.URL }}
   ignore-certificate-errors: {{ grafana_kiosk.target.ignore_certificate_errors }}
