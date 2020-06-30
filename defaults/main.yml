@@ -22,6 +22,7 @@ grafana_kiosk:
     playlist: false
     URL: https://play.grafana.org
     ignore_certificate_errors: false
+  enable_systemd: true
 
 
 # perform basic versionscheck?
