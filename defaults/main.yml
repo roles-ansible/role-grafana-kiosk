@@ -1,6 +1,7 @@
 ---
 # default variables
 grafana_kiosk:
+  user: pi
   git_release: 'v1.0.2'
   git_url: 'https://github.com/grafana/grafana-kiosk'
   install_requirements: true

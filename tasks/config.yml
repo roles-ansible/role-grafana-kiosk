@@ -12,3 +12,12 @@
     dest: /etc/grafana-kiosk/config.yml
     mode: 0644
     backup: true
+
+- name: deploy systemd file
+  become: true
+  template:
+    src: templates/grafana-kiosk.service
+    dest: /etc/systemd/system/grafana-kiosk.service
+    mode: 0664
+    owner: root
+    group: root

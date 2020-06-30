@@ -1,5 +1,6 @@
 ---
 _grafana_kiosk:
+  user: pi
   git_release: 'v1.0.2'
   git_url: 'https://github.com/grafana/grafana-kiosk'
   install_requirements: true
@@ -26,5 +27,5 @@ _dl_matrix:
   'armv6l': "grafana-kiosk.linux.armv6"
   'armv5l': "grafana-kiosk.linux.armv5"
 
-playbook_version_number: 4 # should be an integer
+playbook_version_number: 5 # should be an integer
 playbook_version_path: 'role-grafana-kiosk_roles-ansible_github.com.version' # unique string
