@@ -1,0 +1,6 @@
+---
+- name: install requirements for grafana-kiosk
+  become: true
+  package:
+    name: "{{ grafana_kiosk.required_packages }}"
+    state: "{{ grafana_kiosk.install_state }}"

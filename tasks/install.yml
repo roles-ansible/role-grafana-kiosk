@@ -1,0 +1,20 @@
+---
+- name: generate download URL for detected architecture
+  set_fact:
+    _download_url: "{{ grafana_kiosk.git_url }}/releases/download/{{ grafana_kiosk.git_release }}/{{ _dl_matrix[ansible_architecture] }}"
+  when: grafana_kiosk.architecture == 'autodetect'
+
+- name: generate download URL for predefined architecture
+  set_fact:
+    _download_url: "{{ grafana_kiosk.git_url }}/releases/download/{{ grafana_kiosk.git_release }}/grafana-kiosk.linux.{{ grafana_kiosk.architecture }}"
+  when: not grafana_kiosk.architecture == 'autodetect'
+
+- name: download grafana-kiosk binary
+  become: true
+  get_url:
+    url: "{{ _download_url }}"
+    dest: /usr/bin/grafana-kiosk
+    owner: root
+    group: root
+    mode: 0755
+    force: true

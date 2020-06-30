@@ -1,6 +1,15 @@
 ---
 _grafana_kiosk:
-  foo: bar
+  install_requirements: true
+  required_packages: []
+  install_state: 'present'
 
-playbook_version_number: 1 # should be an integer
+_dl_matrix:
+  'x86_64': "grafana-kiosk.linux.amd64"
+  'i386': "grafana-kiosk.linux.386"
+  'armv7l': "grafana-kiosk.linux.armv7"
+  'armv6l': "grafana-kiosk.linux.armv6"
+  'armv5l': "grafana-kiosk.linux.armv5"
+
+playbook_version_number: 2 # should be an integer
 playbook_version_path: 'role-grafana-kiosk_roles-ansible_github.com.version' # unique string
