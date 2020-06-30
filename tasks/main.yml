@@ -1,0 +1,9 @@
+---
+- name: combine grafana_kiosk configuration
+  set_fact:
+    grafana_kiosk: "{{ _grafana_kiosk|combine(grafana_kiosk, recursive=True) }}"
+
+- include_tasks: versioncheck.yml
+  when: submodules_versioncheck|bool
+
+

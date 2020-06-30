@@ -1,0 +1,7 @@
+---
+# default variables
+grafana_kiosk:
+  foo: bar
+
+# perform basic versionscheck?
+submodules_versioncheck: false

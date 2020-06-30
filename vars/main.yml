@@ -1,0 +1,6 @@
+---
+_grafana_kiosk:
+  foo: bar
+
+playbook_version_number: 1 # should be an integer
+playbook_version_path: 'role-grafana-kiosk_roles-ansible_github.com.version' # unique string
