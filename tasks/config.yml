@@ -12,6 +12,7 @@
     dest: /etc/grafana-kiosk/config.yml
     mode: 0644
     backup: true
+  notify: systemctl restart grafana-kiosk.service
 
 - name: deploy systemd file
   become: true
@@ -21,3 +22,4 @@
     mode: 0664
     owner: root
     group: root
+  notify: systemctl restart grafana-kiosk.service

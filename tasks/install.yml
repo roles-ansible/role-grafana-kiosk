@@ -18,3 +18,4 @@
     group: root
     mode: 0755
     force: true
+  notify: systemctl restart grafana-kiosk.service

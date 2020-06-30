@@ -1,0 +1,7 @@
+---
+- name: systemctl restart grafana-kiosk.service
+  become: true
+  systemd:
+    state: restarted
+    name: grafana-kiosk.service
+    daemon_reload: yes
