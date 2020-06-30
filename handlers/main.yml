@@ -5,4 +5,4 @@
     state: restarted
     name: grafana-kiosk.service
     daemon_reload: yes
-    enabled: grafana_kiosk.enable_systemd | bool
+    enabled: "{{ grafana_kiosk.enable_systemd | bool }}"

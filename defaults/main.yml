@@ -23,6 +23,7 @@ grafana_kiosk:
     URL: https://play.grafana.org
     ignore_certificate_errors: false
   enable_systemd: true
+  display: DISPLAY=:0
 
 
 # perform basic versionscheck?
