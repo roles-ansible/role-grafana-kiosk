@@ -1,0 +1,14 @@
+---
+- name: mkdir /etc/grafana-kiosk
+  become: true
+  file:
+    path: /etc/grafana-kiosk
+    state: directory
+
+- name: deploy grafana-kiosk config
+  become: true
+  template:
+    src: templates/config.yml
+    dest: /etc/grafana-kiosk/config.yml
+    mode: 0644
+    backup: true

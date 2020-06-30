@@ -10,3 +10,5 @@
   when: grafana_kiosk.install_requirements | bool
 
 - include_tasks: install.yml
+
+- include_tasks: config.yml

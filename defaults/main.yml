@@ -7,6 +7,19 @@ grafana_kiosk:
   required_packages: []
   install_state: 'present'
   architecture: 'autodetect'
+  general:
+    kiosk_mode: full
+    autofit: true
+    lxde: true
+    lxde_home: /home/pi
+  target:
+    login_method: anon
+    username: user
+    password: changeme
+    playlist: false
+    URL: https://play.grafana.org
+    ignore_certificate_errors: false
+
 
 # perform basic versionscheck?
 submodules_versioncheck: false
