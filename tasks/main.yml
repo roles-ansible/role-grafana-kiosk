@@ -4,7 +4,7 @@
     grafana_kiosk: "{{ _grafana_kiosk|combine(grafana_kiosk, recursive=True) }}"
 
 - include_tasks: versioncheck.yml
-  when: submodules_versioncheck|bool
+  when: submodules_versioncheck | bool
 
 - include_tasks: packages.yml
   when: grafana_kiosk.install_requirements | bool
@@ -12,3 +12,6 @@
 - include_tasks: install.yml
 
 - include_tasks: config.yml
+
+- include_tasks: lightdm.yml
+  when: grafana_kiosk.lightdm_autologin | bool

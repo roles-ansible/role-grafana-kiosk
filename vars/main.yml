@@ -23,6 +23,7 @@ _grafana_kiosk:
     ignore_certificate_errors: false
   enable_systemd: true
   display: DISPLAY=:0
+  lightdm_autologin: false
 
 _dl_matrix:
   'x86_64': "grafana-kiosk.linux.amd64"
@@ -31,5 +32,5 @@ _dl_matrix:
   'armv6l': "grafana-kiosk.linux.armv6"
   'armv5l': "grafana-kiosk.linux.armv5"
 
-playbook_version_number: 11 # should be an integer
+playbook_version_number: 12 # should be an integer
 playbook_version_path: 'role-grafana-kiosk_roles-ansible_github.com.version' # unique string

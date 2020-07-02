@@ -1,0 +1,16 @@
+---
+- name: set autologin user to '{{ grafana_kiosk.user }}'
+  become: true
+  lineinfile:
+    path: /etc/lightdm/lightdm.conf
+    regexp: '^autologin-user='
+    insertafter: '^#autologin-user='
+    line: "autologin-user={{ grafana_kiosk.user }}"
+
+- name: set autologin user timeout to 0
+  become: true
+  lineinfile:
+    path: /etc/lightdm/lightdm.conf
+    regexp: '^autologin-user-timeout='
+    insertafter: '^#autologin-user-timeout='
+    line: "autologin-user-timeout=0"

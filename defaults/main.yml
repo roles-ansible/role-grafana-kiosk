@@ -24,7 +24,7 @@ grafana_kiosk:
     ignore_certificate_errors: false
   enable_systemd: true
   display: DISPLAY=:0
-
+  lightdm_autologin: false
 
 # perform basic versionscheck?
 submodules_versioncheck: false
