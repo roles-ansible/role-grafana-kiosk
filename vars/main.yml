@@ -1,6 +1,6 @@
 ---
 _grafana_kiosk:
-  user: pi
+  user: "{{ ansible_user }}"
   git_release: 'v1.0.2'
   git_url: 'https://github.com/grafana/grafana-kiosk'
   install_requirements: true
@@ -13,7 +13,7 @@ _grafana_kiosk:
     kiosk_mode: full
     autofit: true
     lxde: true
-    lxde_home: /home/pi
+    lxde_home: "/home/{{ ansible_user }}"
   target:
     login_method: anon
     username: user
@@ -32,5 +32,5 @@ _dl_matrix:
   'armv6l': "grafana-kiosk.linux.armv6"
   'armv5l': "grafana-kiosk.linux.armv5"
 
-playbook_version_number: 15 # should be an integer
+playbook_version_number: 17 # should be an integer
 playbook_version_path: 'role-grafana-kiosk_roles-ansible_github.com.version' # unique string
