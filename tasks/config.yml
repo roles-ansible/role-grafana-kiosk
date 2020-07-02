@@ -28,7 +28,7 @@
   become: true
   template:
     src: templates/grafana-kiosk.env.j2
-    dest: "/home/{{ grafana_kiosk.user }}/.grafana-kiosk.env"
+    dest: /etc/grafana-kiosk/.grafana-kiosk.env
     mode: 0755
     owner: "{{ grafana_kiosk.user }}"
   notify: systemctl restart grafana-kiosk.service
