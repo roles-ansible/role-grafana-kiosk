@@ -9,13 +9,12 @@ User={{ grafana_kiosk.user }}
 Restart = always
 RestartSec=5s
 Type=simple
-Environment="{{ grafana_kiosk.display }}"
-Environment="XAUTHORITY=/home/{{ grafana_kiosk.user }}/.Xauthority"
-ExecStart=
+EnvironmentFile=/home/{{ grafana_kiosk.user }}/.grafana-kiosk.env
+ExecStart=/bin/bash -c "
   {%- if not grafana_kiosk.general.autofit | bool -%}
-    KIOSK_AUTOFIT={{ grafana_kiosk.general.autofit | ternary("true", "false") }}{{ ' ' }}
-  {%- endif -%}
-/usr/bin/grafana-kiosk -c /etc/grafana-kiosk/config.yml
+    KIOSK_AUTOFIT={{ grafana_kiosk.general.autofit | ternary("true", "false") }}{{ '; '}}
+{%- endif -%}
+/usr/bin/grafana-kiosk -c /etc/grafana-kiosk/config.yml"
 
 [Install]
 WantedBy=graphical.target

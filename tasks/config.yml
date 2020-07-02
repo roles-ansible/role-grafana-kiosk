@@ -8,7 +8,7 @@
 - name: deploy grafana-kiosk config
   become: true
   template:
-    src: templates/config.yml
+    src: templates/config.yml.j2
     dest: /etc/grafana-kiosk/config.yml
     mode: 0644
     backup: true
@@ -17,9 +17,19 @@
 - name: deploy systemd file
   become: true
   template:
-    src: templates/grafana-kiosk.service
+    src: templates/grafana-kiosk.service.j2
     dest: /etc/systemd/system/grafana-kiosk.service
     mode: 0664
     owner: root
     group: root
   notify: systemctl restart grafana-kiosk.service
+
+- name: deploy env vars
+  become: true
+  template:
+    src: templates/grafana-kiosk.env.j2
+    dest: "/home/{{ grafana_kiosk.user }}/.grafana-kiosk.env"
+    mode: 0755
+    owner: "{{ grafana_kiosk.user }}"
+  notify: systemctl restart grafana-kiosk.service
+
