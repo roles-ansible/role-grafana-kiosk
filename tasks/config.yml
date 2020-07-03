@@ -22,6 +22,7 @@
     mode: 0664
     owner: root
     group: root
+  when: grafana_kiosk.manage_systemd | bool
   notify: systemctl restart grafana-kiosk.service
 
 - name: deploy env vars
