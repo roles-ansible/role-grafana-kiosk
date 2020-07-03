@@ -1,0 +1,40 @@
+---
+galaxy_info:
+  author: L3D
+  description: Ansible role to deploy and configure the grafana-kiosk from grafana.
+  role_name: grafana_kiosk
+  license: MIT
+  min_ansible_version: 2.4
+  github_branch: master
+  platforms:
+#    - name: Archlinux
+#      versions: all
+    - name: Debian
+      versions:
+        - sid
+        - buster
+        - jessie
+        - stretch
+    - name: Ubuntu
+      versions:
+        - xenial
+        - trusty
+        - eoan
+#        - bionic
+#    - name: Fedora
+#      versions:
+#        - 31
+#        - 32
+#        - 33
+#    - name: EL
+#      versions:
+#        - 8
+#        - 7
+#        - 6
+  galaxy_tags:
+    - grafana
+    - kiosk
+    - grafanakiosk
+    - dashboard
+    - tv
+dependencies: []
