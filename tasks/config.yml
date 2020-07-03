@@ -33,4 +33,3 @@
     mode: 0755
     owner: "{{ grafana_kiosk.user }}"
   notify: systemctl restart grafana-kiosk.service
-
