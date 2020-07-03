@@ -22,7 +22,7 @@ grafana_kiosk:
     playlist: false
     URL: https://play.grafana.org
     ignore_certificate_errors: false
-  enable_systemd: true
+  manage_systemd: true
   display: DISPLAY=:0
   lightdm_autologin: false
 
